@@ -19,11 +19,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+
+			loadData: async (url, metodo = "GET", body = "", headers = { "Content-Type": "application/json" }) => {
+				const dataApi = await fetch(url, {
+					method: metodo,
+					body: body,
+					headers: headers
+				})
+					.then(response => response.json())
+					.then(data)
+					.catch(error => error.message);
 			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
