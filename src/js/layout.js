@@ -3,9 +3,11 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { Container } from "react-bootstrap";
 
-import { Home } from "./views/home";
+import { Characters } from "./views/characters";
+import { Planets } from "./views/planets";
 import { Seleccionado } from "./component/Seleccionado/seleccionado";
 import { Single } from "./views/single";
+import { Home } from "./views/home";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -26,6 +28,12 @@ const Layout = () => {
 						<Switch>
 							<Route exact path="/">
 								<Home />
+							</Route>
+							<Route exact path="/characters">
+								<Characters />
+							</Route>
+							<Route exact path="/planets">
+								<Planets />
 							</Route>
 							<Route exact path="/seleccionado">
 								<Seleccionado />

@@ -8,21 +8,6 @@ export const Tarjeta = () => {
 			<div className="testimonial-group">
 				<div className="row mt-2">
 					<div>
-						{/* <div className="card">
-							<img
-								src="https://lumiere-a.akamaihd.net/v1/images/magistrate-morgan-elsbeth-main_d7b9d192.jpeg?region=262%2C1%2C951%2C536&width=768"
-								className="card-img-top"
-								alt="..."
-							/>
-							<div className="card-body">
-								<h5 className="card-title">Personaje</h5>
-								<p className="card-text ml-3">
-									<li>Gender:</li>
-									<li>Hair Color:</li>
-									<li>Eye Color:</li>
-								</p>
-							</div>
-						</div> */}
 						<Card>
 							<Card.Header as="h5">Card title</Card.Header>
 							<Container>

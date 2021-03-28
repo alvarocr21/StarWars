@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { DropdownButton, Dropdown, ButtonGroup, Button } from "react-bootstrap";
+import { DropdownButton, Dropdown, ButtonGroup, Button, Badge } from "react-bootstrap";
+
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
+
 	return (
 		<nav className="navbar navbar-dark mb-3">
 			<Link to="/">
@@ -16,13 +20,21 @@ export const Navbar = () => {
 			</Link>
 			<div className="ml-auto">
 				<ButtonGroup size="lg" aria-label="Basic example">
-					<Button variant="warning">Characters</Button>
-					<Button variant="warning">Planets</Button>
+					<Link to="characters">
+						<Button onClick={() => actions.changeType("characters")} variant="warning">
+							Characters
+						</Button>
+					</Link>
+					<Link to="planets">
+						<Button onClick={() => actions.changeType("planets")} variant="warning">
+							Planets
+						</Button>
+					</Link>
 				</ButtonGroup>
 			</div>
 
 			<div className="ml-auto">
-				<DropdownButton id="dropdown-basic-button" title="Favorites" variant="warning">
+				<DropdownButton id="dropdown-basic-button" title={<Badge variant="light">9</Badge>} variant="warning">
 					<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
 					<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
 					<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>

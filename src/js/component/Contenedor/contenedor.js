@@ -5,7 +5,7 @@ import { Card } from "./card";
 export const Contenedor = () => {
 	return (
 		<div className="mt-5">
-			<Card tipo="characters" />
+			<Card />
 		</div>
 	);
 };
