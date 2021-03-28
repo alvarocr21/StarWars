@@ -1,4 +1,6 @@
 import React from "react";
+import { Row, Col } from "react-bootstrap";
+
 import { Card } from "./card";
 export const Contenedor = () => {
 	const titulo = {
@@ -9,11 +11,13 @@ export const Contenedor = () => {
 			<div className="mt-4">
 				<h3 style={titulo}>Characters</h3>
 			</div>
-			<Card />
+
+			<Card tipo="characters" />
+
 			<div className="mt-4">
 				<h3 style={titulo}>Planets</h3>
 			</div>
-			<Card />
+			<Card tipo="planets" />
 		</div>
 	);
 };
