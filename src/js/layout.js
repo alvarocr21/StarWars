@@ -4,7 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { Container } from "react-bootstrap";
 
 import { Home } from "./views/home";
-import { Demo } from "./views/demo";
+import { Seleccionado } from "./component/Seleccionado/seleccionado";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
@@ -27,8 +27,8 @@ const Layout = () => {
 							<Route exact path="/">
 								<Home />
 							</Route>
-							<Route exact path="/demo">
-								<Demo />
+							<Route exact path="/seleccionado">
+								<Seleccionado />
 							</Route>
 							<Route exact path="/single/:theid">
 								<Single />

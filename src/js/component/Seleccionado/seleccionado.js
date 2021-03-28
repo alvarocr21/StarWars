@@ -1,11 +1,11 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 
-import { Card } from "./card";
-export const Contenedor = () => {
+import { Tarjeta } from "./tarjeta";
+export const Seleccionado = () => {
 	return (
 		<div className="mt-5">
-			<Card tipo="characters" />
+			<Tarjeta />
 		</div>
 	);
 };

@@ -12,7 +12,7 @@ export const Card = () => {
 					<img
 						className="d-block w-100"
 						src="https://lumiere-a.akamaihd.net/v1/images/magistrate-morgan-elsbeth-main_d7b9d192.jpeg?region=262%2C1%2C951%2C536&width=768"
-						width="800"
+						width="400"
 						height="600"
 						alt="First slide"
 					/>
@@ -29,7 +29,7 @@ export const Card = () => {
 					<img
 						className="d-block w-100"
 						src="https://lumiere-a.akamaihd.net/v1/images/captain-lang-main_dce2adfb.jpeg?region=372%2C0%2C537%2C537&width=320"
-						width="800"
+						width="400"
 						height="600"
 						alt="Second slide"
 					/>
@@ -43,7 +43,7 @@ export const Card = () => {
 					<img
 						className="d-block w-100"
 						src="https://lumiere-a.akamaihd.net/v1/images/magistrate-morgan-elsbeth-main_d7b9d192.jpeg?region=262%2C1%2C951%2C536&width=768"
-						width="800"
+						width="400"
 						height="600"
 						alt="Third slide"
 					/>

@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 
 export const BtnAmplia = () => {
 	return (
-		<Link to="/demo">
+		<Link to="/seleccionado">
 			<Button variant="outline-primary">Learn more!</Button>
 		</Link>
 	);
