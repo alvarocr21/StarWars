@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
+import PropsType from "prop-types";
+import { Context } from "../../store/appContext";
 
-export const BtnLike = () => {
+export const BtnLike = props => {
+	const { store, actions } = useContext(Context);
+
 	return (
-		<button className="btn btn-outline-warning border border-warning p-2">
-			<i className="far fa-heart" />
-		</button>
+		<div>
+			<button
+				onClick={() => actions.setFavorites(props.name)}
+				className="btn btn-outline-warning border border-warning p-2">
+				{store.favorites.includes(props.name) ? <i className="fas fa-heart" /> : <i className="far fa-heart" />}
+			</button>
+		</div>
 	);
+};
+
+BtnLike.propTypes = {
+	name: PropsType.string,
+	indice: PropsType.number
 };

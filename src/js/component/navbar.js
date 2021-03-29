@@ -34,10 +34,17 @@ export const Navbar = () => {
 			</div>
 
 			<div className="ml-auto">
-				<DropdownButton id="dropdown-basic-button" title={<Badge variant="light">9</Badge>} variant="warning">
-					<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-					<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-					<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+				<DropdownButton
+					id="dropdown-basic-button"
+					title={`Favorites ${store.favorites.length}`}
+					variant="warning">
+					{store.favorites.map((item, index) => {
+						return (
+							<Dropdown.Item key={index} href="#/action-1" onClick={() => actions.setFavorites(item)}>
+								<i className="fas fa-trash-alt" /> {item}
+							</Dropdown.Item>
+						);
+					})}
 				</DropdownButton>
 			</div>
 		</nav>

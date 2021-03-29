@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: [],
 			planets: [],
 			favorites: [],
-			tipo: "characters"
+			tipo: "",
+			oneItem: {}
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -24,6 +25,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ characters: json.results });
 					} else if (store.tipo == "planets") {
 						setStore({ planets: json.results });
+					} else if (store.tipo == "oneItem") {
+						setStore({ oneItem: json });
 					}
 				} else {
 					const dataApi = await fetch(url, {
@@ -32,12 +35,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 						headers: headers
 					});
 					const json = await dataApi.json();
-					setStore();
 				}
 			},
 
 			changeType: tipoMostrar => {
 				setStore({ tipo: tipoMostrar });
+			},
+
+			setFavorites: favorite => {
+				const store = getStore();
+				let contar = 0;
+				store.favorites.map((item, indice) => {
+					if (favorite == item) {
+						let newList = store.favorites;
+						newList.splice(indice, 1);
+						contar++;
+						setStore({ favorites: newList });
+					}
+				});
+
+				if (store.favorites.length == 0 && contar == 0) {
+					setStore({ favorites: [...store.favorites, favorite] });
+				} else if (store.favorites.length > 0 && contar == 0) {
+					setStore({ favorites: [...store.favorites, favorite] });
+				}
 			}
 		}
 	};
