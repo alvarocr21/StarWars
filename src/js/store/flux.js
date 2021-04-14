@@ -22,9 +22,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					const json = await dataApi.json();
 					if (store.tipo == "characters") {
-						setStore({ characters: json.results });
+						setStore({ characters: json });
 					} else if (store.tipo == "planets") {
-						setStore({ planets: json.results });
+						setStore({ planets: json });
 					} else if (store.tipo == "oneItem") {
 						setStore({ oneItem: json });
 					}
