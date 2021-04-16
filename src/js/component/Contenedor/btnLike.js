@@ -17,6 +17,7 @@ export const BtnLike = props => {
 };
 
 BtnLike.propTypes = {
-	name: PropsType.string,
+    name: PropsType.string,
+    favorite_id:PropsType.number,
 	indice: PropsType.number
 };

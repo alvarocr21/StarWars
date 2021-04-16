@@ -40,7 +40,7 @@ export const Card = () => {
 							<Carousel.Caption>
 								<div className="d-flex justify-content-between">
 									<BtnAmplia url={item.url} />
-									<BtnLike name={item.name} indice={index} />
+									<BtnLike name={item.name} favorite_id={item.id} indice={index} />
 								</div>
 								<h3>{item.name}</h3>
 							</Carousel.Caption>

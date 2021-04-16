@@ -42,10 +42,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ tipo: tipoMostrar });
 			},
 
-			setFavorites: favorite => {
+			setFavorites: (favorite,user,character=null,planet=null) => {
 				const store = getStore();
-				let contar = 0;
-				store.favorites.map((item, indice) => {
+                let contar = 0;
+                let cuerpo = {
+                    "user_id": user,
+                    "planets_id": character,
+                    "characters_id": planet
+                };
+                let url = "https://apiasolanostarwars.herokuapp.com/favorito";
+                
+                
+                const dataApi = await fetch(url, {
+						method: "POST",
+						body: cuerpo,
+						headers: { "Content-Type": "application/json" }
+					});
+					const json = await dataApi.json();
+                
+                store.favorites.map((item, indice) => {
 					if (favorite == item) {
 						let newList = store.favorites;
 						newList.splice(indice, 1);
